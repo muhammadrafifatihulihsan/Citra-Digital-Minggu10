@@ -1,0 +1,30 @@
+"Pipeline Morfologi untuk Preprocessing OCR dan Counting Objek"
+
+Siapkan 2 citra dengan karakteristik berbeda:
+-Citra A: Teks dokumen dengan noise (titik, goresan, sambungan) WAJIB CITRA ASLI BUKAN BUATAN
+-Citra B: Objek overlapping/bersentuhan (koin, partikel, sel) WAJIB CITRA ASLI BUKAN BUATAN
+
+Eksperimen structuring element:
+-Variasi ukuran: 3×3, 5×5, 7×7
+-Variasi bentuk: square, cross, ellipse
+-Analisis pengaruh terhadap hasil
+
+Implementasikan operasi dasar:
+-Erosi dan dilasi (dengan variasi iterasi)
+-Visualisasi efek pada boundary objek
+
+Implementasikan operasi majemuk:
+-Opening: noise removal + preservasi bentuk
+-Closing: mengisi hole + menyambung objek terputus
+-Gradient morfologi: deteksi boundary
+-Top hat/Black hat: ekstraksi detail terang/gelap
+
+Aplikasi spesifik:
+-OCR PREPROCESSING: Pipeline morfologi untuk membersihkan teks sebelum thresholding
+-COUNTING OBJEK: Segmentasi objek bersentuhan dengan kombinasi watershed + morfologi
+
+Evaluasi dan analisis:
+-OCR: karakter recognition rate (sebelum vs sesudah)
+-Counting: akurasi jumlah objek (manual vs otomatis)
+-Waktu komputasi tiap operasi
+-Trade-off kebersihan vs deformasi bentuk
